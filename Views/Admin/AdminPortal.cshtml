@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "AdminPortal";
+    Layout = "~/Views/Shared/_Layout1 .cshtml"; 
+}
+
+<h2>Admin Portal</h2>
+@Html.Partial("../Admin/FlashAlert")
+<hr />
+<div>
+    <h4>
+        @Html.ActionLink("RemedyDetails", "ViewRemedyDetails", "Remedy")|@Html.ActionLink("Create Questionnaire", "CreateFeedBack", "Feedback")|@Html.ActionLink("Edit Questionnaire", "EditFeedBack", "Feedback")
+    </h4>
+</div>

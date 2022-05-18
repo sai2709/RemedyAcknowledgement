@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "AnalystPortal";
+    Layout = "~/Views/Shared/_Layout1 .cshtml";
+}
+<script type="text/javascript">
+function preventBack() { window.history.forward(); }
+setTimeout("preventBack()", 0);
+Cache.delete();
+window.onunload = function () { null };
+</script>
+<body>
+    <h2>Analyst Portal</h2>
+    @Html.Partial("FlashAlert")
+    <hr/>
+    <div>
+        <h3>
+            @Html.ActionLink("Click here to see RemedyList", "ViewRemedyList", "SupportAnalyst")
+        </h3>
+      </div>
+        
+</body>
+

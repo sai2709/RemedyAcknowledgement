@@ -1,0 +1,35 @@
+﻿@model IEnumerable<RemedyAcknowledgement.Models.SupportAnalyst>
+
+@{
+    ViewBag.Title = "TicketTransferView";
+    Layout = "~/Views/Shared/_Layout1 .cshtml";
+}
+
+<h2>TicketTransferView</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupportLevel)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupportLevel)
+            </td>
+        </tr>
+    }
+</table>
+

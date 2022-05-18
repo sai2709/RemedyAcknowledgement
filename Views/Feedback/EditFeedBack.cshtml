@@ -1,0 +1,42 @@
+﻿@model IEnumerable<RemedyAcknowledgement.Models.Questionnaire>
+
+@{
+    ViewBag.Title = "EditFeedBack";
+    Layout = "~/Views/Shared/_Layout1 .cshtml";
+}
+
+<h2>Edit Feedback Questions</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionText)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionText)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditQuestions", new { id = item.QuestionId }) |
+
+                @Html.ActionLink("Delete", "DeleteQuestions", new { id = item.QuestionId })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Back to Portal", "AdminPortal", "Admin")
+</div>

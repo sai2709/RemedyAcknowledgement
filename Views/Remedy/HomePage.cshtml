@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "HomePage";
+}
+<h2 style="text-align:center">Home Page</h2>
+<style>
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    table {
+        padding: 5px;
+        border-spacing: 15px;
+    }
+</style>
+<table class="center" style="width:100%">
+    <tr>
+        <th><img src="~/Content/pics/Users.png" width="255" height="255" /></th>
+        <th><img src="~/Content/pics/supportanalyst.jpg" width="255" height="255" /></th>
+        <th><img src="~/Content/pics/Admin.jpg" width="255" height="255" /></th>
+    </tr>
+    <tr>
+        <td>User</td>
+        <td>Support Analyst</td>
+        <td>Admin</td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+        <td><img src="~/Content/pics/login.jpg" width="22" height="22" /></td>
+        <td><img src="~/Content/pics/login.jpg" width="22" height="22" /></td>
+        <td> <img src="~/Content/pics/login.jpg" width="22" height="22" /></td>
+
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Login", "Login", "Remedy", new {id="User"},null)</td>
+        <td>@Html.ActionLink("Login", "Login", "Remedy", new { id = "SuppportAnalyst" }, null)</td>
+        <td>@Html.ActionLink("Login", "Login", "Remedy", new { id = "Admin"}, null)</td>
+    </tr>
+    <tr>
+        <td><img src="~/Content/pics/register.jpg" width="22" height="22" /></td>
+        <td><img src="~/Content/pics/register.jpg" width="22" height="22" /></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Register", "UserRegistration", "Remedy")</td>
+        <td>@Html.ActionLink("Register", "SupportRegistration", "Remedy")</td>
+        <td></td>
+    </tr>
+</table>
+

@@ -1,0 +1,88 @@
+﻿@model RemedyAcknowledgement.Models.RemedyDetails
+
+@{
+    ViewBag.Title = "RemedyDetailsView";
+    Layout = "~/Views/Shared/_Layout1 .cshtml";
+}
+
+<h2>Remedy Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlternateNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlternateNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeatNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PCNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PCNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IPAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IPAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RemedyStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemedyStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "ViewRemedyDetails","Remedy")
+</p>

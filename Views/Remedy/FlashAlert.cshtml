@@ -1,0 +1,19 @@
+﻿@{
+    RemedyAcknowledgement.Models.RemedyContext context = new RemedyAcknowledgement.Models.RemedyContext();
+    string userid = ViewBag.UserId;
+    List<RemedyAcknowledgement.Models.Notification> alerts = context.Notifications.Where(n => n.SenderId == userid || n.ReceiverId == userid).ToList();
+
+}
+<marquee scrollamount="5">
+    @foreach (var notalert in alerts)
+    {
+       
+        var data = notalert.AlertText.Split(' ');
+        int index = data.Length - 1;
+        int remedyid = int.Parse(data[index]);
+
+        @Html.ActionLink(notalert.AlertText, "GetRemedyDetails", "SupportAnalyst", new { id = remedyid }, null)
+    }
+</marquee>
+
+

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<RemedyAcknowledgement.Models.RemedyDetails>
+
+<h2>Remedy Details</h2>
+
+@*@using (Html.BeginForm("UserSearch", "Remedy", FormMethod.Post))
+    {
+        @Html.TextBox("sort");
+        <input type="submit" value="&#x21D5Sort">
+
+    }*@
+@using (Html.BeginForm("UserFilter", "Remedy", FormMethod.Post))
+{
+    @Html.TextBox("data");
+    <input type="submit" value="&#128269submit">
+
+
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Remedyid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remedyid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditRemedyDetails", "Admin", new { id = item.Remedyid }, null) |
+                @Html.ActionLink("Details", "RemedyDetailsView", "Admin", new { id = item.Remedyid }, null) |
+                @if (item.RemedyStatus == "new")
+                {
+                    @Html.ActionLink("Assign", "AssignRemedy", "Admin", new { id = item.Remedyid }, null)
+                }
+                @if (item.RemedyStatus == "Assigned")
+                {
+                    @Html.ActionLink("ChangeStatus", "ChangeRemedyStatus1", "Remedy", new { id = item.Remedyid }, null)
+                }
+            </td>
+
+        </tr>
+    }
+</table>

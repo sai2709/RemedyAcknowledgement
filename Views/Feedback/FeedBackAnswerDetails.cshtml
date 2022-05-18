@@ -1,0 +1,40 @@
+﻿@model IEnumerable<RemedyAcknowledgement.Models.Feedback>
+
+@{
+    ViewBag.Title = "FeedBackAnswerDetails";
+    Layout = "~/Views/Shared/_Layout1 .cshtml";
+}
+
+<h2>Feedback Answers</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Answer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+
+        </tr>
+    }
+
+</table>

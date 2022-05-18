@@ -1,0 +1,58 @@
+﻿@model IEnumerable<RemedyAcknowledgement.Models.RemedyList>
+
+@{
+    ViewBag.Title = "ViewRemedyList";
+    Layout = "~/Views/Shared/_Layout1 .cshtml";
+}
+
+<h2>Remedy List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SerialNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remedyid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerialNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remedyid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Request Document", "RequestDoc", "SupportAnalyst", new { id = item.SerialNo }, null) |
+            @Html.ActionLink("Details", "GetRemedyDetails", "SupportAnalyst", new { id = item.Remedyid }, null) |
+            @Html.ActionLink("Change Status", "ChangeRemedyStatus", "SupportAnalyst", new { id = item.SerialNo }, null) |
+            @Html.ActionLink("Transfer Ticket", "TransferTicket", "SupportAnalyst", new { id = item.SerialNo }, null)|
+            @Html.ActionLink("Ticket View", "TicketTransferView", "SupportAnalyst", new { id = item.SerialNo }, null)
+        </td>
+    </tr>
+}
+
+</table>
+

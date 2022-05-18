@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RemedyAcknowledgement.Models.Questionnaire>
+
+@{
+    ViewBag.Title = "SubmitFeedback";
+    Layout = "~/Views/Shared/_Layout1 .cshtml";
+    string userId = ViewBag.UserId;
+    string feedbackId = ViewBag.FeedbackId;
+
+}
+
+<h2>Submit Feedback</h2>
+<hr />
+| User Id - @userId | Feedback Id - @feedbackId |
+
+
+
+@using (Html.BeginForm())
+{
+
+    @Html.Hidden("UserId", userId)
+    @Html.Hidden("FeedbackId", feedbackId)
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QuestionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuestionText)
+            </th>
+            <th>
+                @Html.Label("Answer")
+            </th>
+
+        </tr>
+
+        @foreach (var item in ViewBag.List)
+        {
+            <tr>
+                <td>
+                    @item.QuestionId
+                </td>
+                <td>
+                    @item.QuestionText
+                </td>
+                <td>
+                    <input type="text" name="A @item.QuestionId">
+                </td>
+
+            </tr>
+        }
+
+    </table>
+    <button type="submit">Submit</button>
+}
